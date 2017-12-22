@@ -84,8 +84,13 @@ onWithOptions event options tag =
 
 stopOptions : Events.Options
 stopOptions =
-    { stopPropagation = True
-    , preventDefault = True
+    let
+        defaultOptions =
+            Events.defaultOptions
+    in
+    { defaultOptions
+        | stopPropagation = True
+        , preventDefault = True
     }
 
 
